@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="dependencies/CSS/bootstrap.min.css" />
+    <link rel="shortcut icon" href="img/app.png" type="image/x-icon" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <div class="head">
+      <div class="container">
+        <section id="Setting" class="pt-5 animate_animated animate_fadeInRight">
+          <div
+            class="div bg-danger w-100 overflow-auto m-auto shadow-lg rounded-lg form-control"
+          >
+            <h1 class="text-center py-5 bg-light border-bottom text-spac">
+              Setting Your Quiz
+            </h1>
+            <div class="p-4">
+              <div class="form-group">
+                <label for="category" class="text-spac text-white"
+                  >Category</label
+                >
+                <select name="category" id="category" class="form-control mb-3">
+                  <option value="9">General Knowledge</option>
+                  <option value="27">Animal</option>
+                  <option value="15">Video Game</option>
+                  <option value="23">History</option>
+                  <option value="21">Sport</option>
+                  <option value="18">CS</option>
+                </select>
+              </div>
+              <div class="form-group pt-4 bg-white form-control">
+                <label for="difficulty" class="text-spac p-1">Difficulty</label>
+                <div class="form-check d-flex flex-column" id="difficulty">
+                  <label class="form-check-label p-1">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="difficulty"
+                      value="easy"
+                      checked
+                    />
+                    Easy
+                  </label>
+                  <label class="form-check-label p-1">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="difficulty"
+                      value="medium"
+                    />
+                    medium
+                  </label>
+                  <label class="form-check-label p-1">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="difficulty"
+                      value="Hard"
+                    />
+                    Hard
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-check-label text-spac"> Question </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numberOfQuestion"
+                  aria-describedby="helpID"
+                  placeholder="Enter Number Of Question 1 - 50"
+                  min="1"
+                  max="50"
+                  required
+                />
+              </div>
+              <button
+                id="startBtn"
+                class="btn float-end py-2 px-4 bg-spac rounded-pill text-dark my-4 btn-light"
+              >
+                Start
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="container">
+        <section
+          id="quiz"
+          class="show pt-5 animate_animated animate_fadeInRight"
+        >
+          <div
+            class="bg-danger w-100 m-auto shadow-lg rounded-lg overflow-auto"
+          >
+            <div class="p-3 bg-light border-bottom overflow-auto">
+              <h1>Quiz</h1>
+              <span
+                class="float-end bg-spac rounded-pill text-white btn-danger btn p-2"
+              >
+                <span id="currentQ"></span> Of
+                <span id="totalQ"></span> Question
+              </span>
+              <span id="incorrect" class="btn btn-danger float-start d-none"
+                >incorrect</span
+              >
+              <span id="correct" class="btn btn-success float-start d-none"
+                >Correct</span
+              >
+              <div class="clearFix"></div>
+            </div>
+
+            <div class="p-4 text-spac">
+              <h5 class="d-inline">
+                Q: <span id="QuestionC" class="text-white"></span>
+              </h5>
+              <ul id="rowAnswer" class="list-inline pt-3"></ul>
+              <div id="alert" class="alert alert-danger mt-3 d-none">
+                please choose your answer
+              </div>
+              <button
+                class="btn btn-light py-2 px-4 bg-spac rounded-pill text-dark my-4"
+                id="next"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section
+          id="finish"
+          class="show mt-5 animate_animated animate_fadeInRight"
+        >
+          <div class="bg-danger w-50 m-auto shadow-lg rounded-lg overflow-auto">
+            <h1 class="text-center text-white py-5 border-bottom bg-spac">
+              Finish
+            </h1>
+            <div class="p-4">
+              <h5 class="text-spac text-center text-white">Score</h5>
+              <h4 class="text-spac text-center text-white" id="score"></h4>
+              <button
+                class="btn float-end py-2 px-4 rounded-pill text-white my-4 btn-success"
+                id="tryBtn"
+              >
+                Try Again?
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: '.head',
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0xfa0000,
+        backgroundColor: 0xe8e8e8,
+        points: 20.0,
+        maxDistance: 22.0,
+      });
+    </script>
+    <script src="dependencies/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
