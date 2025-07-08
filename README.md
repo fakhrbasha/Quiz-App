@@ -36,5 +36,4 @@ An interactive multiple-choice **Quiz Application** built with **HTML**, **CSS**
 
 ---
 
-## 📂 Project Structure
 
